@@ -5,7 +5,7 @@ import './index.css'
 let Root=ReactDOM.createRoot(document.getElementById('root'));
 
 Root.render(
-    <div className="App">
+    <div className="Index">
         <App/>
     </div>
 );

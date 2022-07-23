@@ -1,0 +1,69 @@
+.Navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: black;
+}
+.Links
+{
+    display: flex;
+}
+.A,.B,.C
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+}
+.Input-Search
+{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    margin: 0px 10px;
+}
+.Input-Search input
+{
+    flex: 1;
+    outline: none;
+    border: none;
+    margin: 5px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    height: 100%;
+}
+.Input-Search input:focus
+{
+    outline:none;
+}
+.Search-Icon
+{
+    cursor: pointer;
+    height: 100%;
+    margin: 5px;
+    
+}
+.Icon
+{
+    font-size:large;
+    color: orange;
+}
+.Logo img
+{
+    width: 100px;
+}
+.Actions
+{
+    color: #bdc3c7;
+    cursor: pointer;
+}
+.Caller
+{
+    color: white;
+}
+.Links
+{
+    text-decoration: none;
+    color: black;
+}
