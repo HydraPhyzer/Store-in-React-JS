@@ -1,0 +1,23 @@
+.Carousal img
+{
+    width: 100%;
+}
+.Left , .Right
+{
+    color: black;
+    height: 50px !important;
+    width:  50px !important;
+}
+.carousel-caption
+{
+    color: black;
+}
+.Carousal-Heading
+{
+    background-color: black;
+    color: white;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
