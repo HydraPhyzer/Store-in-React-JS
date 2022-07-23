@@ -1,8 +1,7 @@
 import React from "react";
 import './Navbar.css'
-import {FaSearch} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
-import {FaShoppingBasket} from 'react-icons/fa'
+import {FaShoppingBasket,FaSearch} from 'react-icons/fa'
 
 let Navbar=()=>
 {
