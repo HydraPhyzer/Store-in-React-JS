@@ -21,3 +21,12 @@
     padding: 10px;
     border-radius: 5px;
 }
+
+@media (max-width:450px)
+{
+    .Left , .Right
+    {
+        width: 30px !important;
+        height: 30px !important;
+    }
+}

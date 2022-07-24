@@ -41,3 +41,18 @@
     color:white;
     border-radius: 5px;
 }
+
+@media(max-width:850px)
+{
+    .AllProducts
+    {
+        width: 50%;
+    }
+}
+@media(max-width:550px)
+{
+    .AllProducts
+    {
+        width: 100%;
+    }
+}

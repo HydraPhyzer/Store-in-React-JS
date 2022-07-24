@@ -67,3 +67,67 @@
     text-decoration: none;
     color: black;
 }
+
+@media(max-width:615px)
+{
+    .Caller , .Actions
+    {
+        font-size: small;
+    }
+    .Logo img
+    {
+        width: 50px;
+    }
+    .Input-Search input
+    {
+        flex: 0;
+        margin: 0;
+        padding: 0;
+        flex: 1;
+    }
+}
+@media(max-width:513px)
+{
+    .Actions , .Caller
+    {
+        font-size: x-small;
+        padding: 0;
+        margin: 0;
+    }
+    .Input-Search input
+    {
+        width: fit-content;
+        flex:0;
+        margin-right: 0px;
+    }
+    .Input-Search
+    {
+        flex:0;
+        margin: 0 5px;
+        padding: 0;
+        font-size: small;
+    }
+    .A,.B,.C
+    {
+        margin: 0px 5px;
+    }
+}
+
+@media (max-width:450px)
+{
+    .Input-Search input
+    {
+        width:150px;
+        flex:0;
+        margin-right: 0px;
+    }
+    .Actions
+    {
+        font-size: xx-small;
+    }
+    .C
+    {
+        margin: 0px;
+        text-align: center;
+    }
+}

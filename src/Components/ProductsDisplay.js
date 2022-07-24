@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ProductsDisplay.css'
-import {FaStar} from 'react-icons/fa'
 
 const ProductsDisplay = ({ Products }) => {
 
@@ -12,8 +11,7 @@ const ProductsDisplay = ({ Products }) => {
         {
             if(Star>1)
             {
-                String+="⭐";
-                console.log(Star)
+                String=String+"⭐";
             }
         }
         return `Rating  :${String} (${Count})`
@@ -22,9 +20,9 @@ const ProductsDisplay = ({ Products }) => {
     return (
         <div className="ProductsDiplay row w-100">
             {
-                Products.map((Elem) => {
+                Products.map((Elem,Ind) => {
                     return (
-                        <div className="col-3 AllProducts" key={Elem.id}>
+                        <div className={Ind%5===0? `col-12 AllProducts` : `col-3 AllProducts`} key={Elem.id}>
                             <div className="Image">
                                 <img src={Elem.image} alt="" />
                             </div>
