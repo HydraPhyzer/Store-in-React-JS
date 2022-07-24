@@ -1,10 +1,13 @@
 import React from 'react'
 import './ProductsDisplay.css'
 import { UseGlobalContext } from './Context/Context'
+import { useGlobalCheckoutContext } from './CheckoutContext'
 
 const ProductsDisplay = () => {
 
     let {Products}=UseGlobalContext();
+    let {AddtoCart}=useGlobalCheckoutContext();
+    
     let StarCount=(Star,Count)=>
     {
         let String="";
@@ -18,7 +21,6 @@ const ProductsDisplay = () => {
         }
         return `Rating  :${String} (${Count})`
     }
-
     return (
         <div className="ProductsDiplay row w-100">
             {
@@ -40,7 +42,7 @@ const ProductsDisplay = () => {
                                 </span>
                             </div>
                             <div className="Button">
-                                <button className='Btn'>Add to Cart</button>
+                                <button onClick={()=>{AddtoCart(Elem)}} className='Btn'>Add to Cart</button>
                             </div>
                         </div>
                     )
