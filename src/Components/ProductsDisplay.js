@@ -1,8 +1,10 @@
 import React from 'react'
 import './ProductsDisplay.css'
+import { UseGlobalContext } from './Context/Context'
 
-const ProductsDisplay = ({ Products }) => {
+const ProductsDisplay = () => {
 
+    let {Products}=UseGlobalContext();
     let StarCount=(Star,Count)=>
     {
         let String="";
