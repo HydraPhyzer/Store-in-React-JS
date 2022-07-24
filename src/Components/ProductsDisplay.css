@@ -1,0 +1,43 @@
+.ProductsDiplay
+{
+    margin: 10px auto;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+    padding: 10px;
+    border-color: orange;
+}
+.AllProducts img
+{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+.Image
+{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.AllProducts
+{
+    margin: 10px 0px;
+
+    display: flex;
+    flex-direction: column;
+}
+.Button
+{
+    display: flex;
+    margin-top: auto;
+}
+.Button button
+{
+    border: none;
+    background-color: orange;
+    padding: 5px;
+    margin: 5px 0px;
+    color:white;
+    border-radius: 5px;
+}

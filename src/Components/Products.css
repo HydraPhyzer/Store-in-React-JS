@@ -1,0 +1,9 @@
+.Products
+{
+    padding: 5;
+}
+.Products>h4
+{
+    text-align: center;
+    margin: 10px 0px;
+}

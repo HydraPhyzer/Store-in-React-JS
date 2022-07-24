@@ -7,7 +7,9 @@ let Navbar=()=>
 {
     return(
         <div className="Navbar" >
-            <div className="Logo"><img src="/Logo/Amazon.png" alt="" /></div>
+            <Link to='/'>
+                <div className="Logo"><img src="/Logo/Amazon.png" alt="" /></div>
+            </Link>
 
             <div className="Input-Search">
                 <input type="search" />

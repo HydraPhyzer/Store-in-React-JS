@@ -10,21 +10,21 @@ const Carousal = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="/Posters/A.jpg" className="d-block" alt="..."/>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-md-block">
                             <h5 className='Carousal-Heading'>Checkout With Cards</h5>
                             <p className='mt-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus.</p>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src="/Posters/B.jpg" className="d-block" alt="..."/>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-md-block">
                             <h5 className='Carousal-Heading'>Get Beauty Products</h5>
                             <p className='mt-3'>Some representative placeholder content for the third slide.</p>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src="/Posters/C.jpg" className="d-block" alt="..."/>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div className="carousel-caption d-md-block">
                             <h5 className='Carousal-Heading'>Get Baby Toys</h5>
                             <p className='mt-3'>Fuga sequi aliquam enim incidunt rerum ipsam totam repellat minima placeat.</p>
                         </div>
