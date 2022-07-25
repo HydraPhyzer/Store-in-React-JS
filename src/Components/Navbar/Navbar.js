@@ -2,9 +2,12 @@ import React from "react";
 import './Navbar.css'
 import {Link} from 'react-router-dom'
 import {FaShoppingBasket,FaSearch} from 'react-icons/fa'
+import { useGlobalCheckoutContext } from "../CheckoutContext";
 
 let Navbar=()=>
 {
+    let {Basket}=useGlobalCheckoutContext();
+
     return(
         <div className="Navbar" >
             <Link to='/'>
@@ -27,7 +30,7 @@ let Navbar=()=>
                 </div>
                 <div>
                     <Link to='/checkout' className="C Links">
-                        <span className="Caller">0</span>
+                        <span className="Caller">{Basket.length}</span>
                         <span><FaShoppingBasket className="Icon"/></span>
                     </Link>
                 </div>

@@ -1,0 +1,57 @@
+.Checkout img
+{
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 5px;
+}
+.Img img
+{
+    padding: 10px;
+}
+.Checkout
+{
+    margin:10px 0px 10px 0px;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    border-bottom: 5px solid orange;
+}
+.Block
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+.Btn
+{
+    justify-self: end;
+    height: fit-content;
+    align-self: flex-end;
+
+    border: none;
+    background-color: orange;
+    padding: 5px;
+    margin: 5px 0px 0px auto;
+    color:white;
+    border-radius: 5px;
+}
+.See
+{
+    background-color: #EAEDED;
+}
+
+@media(max-width:450px)
+{
+    .Img img
+    {
+        height: 100px;
+        width: 100px;
+    }
+    .Block
+    {
+        margin: 0px 10px;
+    }
+}
