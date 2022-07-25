@@ -12,6 +12,7 @@ const Signup = () => {
   let [Warn,setWarn]=useState(0);
 
   let Navigator=useNavigate();
+
   let HandleSignUp=(Event)=>
   {
     createUserWithEmailAndPassword(auth , SiEmail , SiPass)
