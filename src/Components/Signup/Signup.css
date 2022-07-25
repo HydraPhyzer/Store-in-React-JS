@@ -1,0 +1,43 @@
+.Signup {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: cadetblue;
+    background: url('../../../public/Posters//B2.jpg');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.Form form {
+    background-color: #34495e;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    grid-gap: 5px;
+    border-radius: 5px;
+    
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+}
+
+.SignupBtn {
+    width: 100%;
+}
+
+.Form form input {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.Form form input:focus {
+    outline: none;
+}

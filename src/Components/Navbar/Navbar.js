@@ -20,10 +20,12 @@ let Navbar=()=>
             </div>
 
             <div className="Links">
-                <div className="A">
-                    <span className="Caller">Hello </span>
-                    <span className="Actions">Sign In</span>
-                </div>
+                <Link to='/login'>
+                    <div className="A">
+                        <span className="Caller">Hello </span>
+                        <span className="Actions">Sign In</span>
+                    </div>
+                </Link>
                 <div className="B">
                     <span className="Caller">Good By </span>
                     <span className="Actions">Sign Out</span>
