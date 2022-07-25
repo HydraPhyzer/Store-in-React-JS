@@ -6,6 +6,14 @@ let Reducer=(state , action)=>
             return{
                 Basket: [...state.Basket , action.Obj],
             }
+        case "REMOVE-FROM-CART":
+            let New=state.Basket.filter((Elem)=>
+            {
+                return action.Id!==Elem.id
+            });
+            return{
+                Basket:[...New],
+            }
         default:
             return state;
     }

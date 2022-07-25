@@ -16,9 +16,16 @@ const CheckoutContext = ({ children }) => {
             Obj
         });
     };
+    let RemoveFromCart=(Id)=>
+    {
+        dispatch({
+            type:"REMOVE-FROM-CART",
+            Id
+        });
+    };
 
     return (
-        <MyCheckoutContext.Provider value={{...MyCheckoutItems , AddtoCart}}>
+        <MyCheckoutContext.Provider value={{...MyCheckoutItems , AddtoCart , RemoveFromCart}}>
             {children}
         </MyCheckoutContext.Provider>
     )
