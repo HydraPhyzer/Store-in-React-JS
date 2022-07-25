@@ -1,7 +1,7 @@
 import React from 'react'
 import './Checkout.css'
-import Navbar from './Navbar/Navbar'
-import { useGlobalCheckoutContext } from './CheckoutContext'
+import Navbar from '../Navbar/Navbar'
+import { useGlobalCheckoutContext } from '../CheckoutContextReducer/CheckoutContext'
 import { FaSadTear } from 'react-icons/fa'
 
 const Checkout = () => {

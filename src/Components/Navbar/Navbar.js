@@ -2,7 +2,7 @@ import React from "react";
 import './Navbar.css'
 import {Link} from 'react-router-dom'
 import {FaShoppingBasket,FaSearch} from 'react-icons/fa'
-import { useGlobalCheckoutContext } from "../CheckoutContext";
+import { useGlobalCheckoutContext } from "../CheckoutContextReducer/CheckoutContext";
 
 let Navbar=()=>
 {

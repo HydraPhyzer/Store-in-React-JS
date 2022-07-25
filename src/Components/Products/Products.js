@@ -1,6 +1,6 @@
 import React from 'react'
 import './Products.css'
-import ProductsDisplay from '../ProductsDisplay'
+import ProductsDisplay from '../DisplayProduct/ProductsDisplay'
 
 
 const Products = ({children}) => {

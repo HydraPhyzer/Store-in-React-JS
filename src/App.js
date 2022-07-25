@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Checkout from './Components/Checkout'
+import Checkout from './Components/Checkout/Checkout'
 import Home from './Components/Home/Home'
 import { Context } from './Components/Context/Context'
-import {CheckoutContext} from './Components/CheckoutContext'
+import {CheckoutContext} from './Components/CheckoutContextReducer/CheckoutContext'
 
 let App = () => {
     return (
