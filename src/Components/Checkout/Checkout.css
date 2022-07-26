@@ -37,6 +37,8 @@
     margin: 5px 0px 0px auto;
     color:white;
     border-radius: 5px;
+
+    height:min-content;
 }
 .See
 {

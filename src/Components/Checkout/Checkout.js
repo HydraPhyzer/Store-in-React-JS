@@ -32,6 +32,7 @@ const Checkout = () => {
                 </div>
                 <div className="Block">
                   <span>Price : {Elem.price}$</span>
+                  <span>Title : {Elem.title}</span>
                   <span>{StarCount(Elem.rating.rate, Elem.rating.count)}</span>
                 </div>
                 {window.matchMedia("(max-width: 450px)").matches ? <button onClick={() => { RemoveItem(Elem.id) }} className='Btn'>Remove</button> : <button onClick={() => { RemoveItem(Elem.id) }} className='Btn'>Remove From Cart</button>}

@@ -6,6 +6,7 @@ const ProductsDisplay = () => {
 
     let { Products } = UseGlobalContext();
     let { AddtoCart } = useGlobalCheckoutContext();
+    let { Basket } = useGlobalCheckoutContext();
 
     let StarCount = (Star, Count) => {
         let String = "";

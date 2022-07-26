@@ -6,10 +6,14 @@ import { useGlobalCheckoutContext } from "../CheckoutContextReducer/CheckoutCont
 import { auth, db } from '../Firebase'
 import { ref, onValue } from 'firebase/database'
 import { signOut } from 'firebase/auth'
+import {UseGlobalContext} from '../Context/Context'
+
 let Navbar = () => {
     let { Basket, SignOutCart, SignInCart } = useGlobalCheckoutContext();
     let [Init, setInit] = useState("Hello");
     let [Sin, setSin] = useState("Sign In");
+    let {GetSearchText}=UseGlobalContext();
+    let [Typo,setTypo]=useState("");
 
     useEffect(() => {
         auth.onAuthStateChanged((User) => {
@@ -38,6 +42,12 @@ let Navbar = () => {
                 alert("Error Occurred");
             })
     }
+
+    let Gather=(Inp)=>
+    {
+        setTypo(Inp);
+        GetSearchText(Inp);
+    }
     return (
         <div className="Navbar" >
             <Link to='/'>
@@ -45,7 +55,7 @@ let Navbar = () => {
             </Link>
 
             <div className="Input-Search">
-                <input type="search" />
+                <input type="search" value={Typo} onChange={(E)=>{Gather(E.target.value);}}/>
                 <FaSearch className="Search-Icon Icon" />
             </div>
 

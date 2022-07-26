@@ -4,6 +4,7 @@ let ProductsArray =createContext();
 
 const Context = ({children}) => {
     let [Products, setProducts] = useState([]);
+    let [TempProducts,setTempProducts]=useState([]);
     let FetchAPI = (API) => {
         fetch(API)
             .then((Res) => {
@@ -11,6 +12,7 @@ const Context = ({children}) => {
             })
             .then((Result) => {
                 setProducts(Result);
+                setTempProducts(Result);
             })
     }
     useEffect(() => {
@@ -18,8 +20,29 @@ const Context = ({children}) => {
         FetchAPI(API);
     }, [])
 
+    let GetSearchText=(Val)=>
+    {
+        let Temp=TempProducts;
+        if(Val==="")
+        {
+            setProducts(Temp);
+        }
+        else
+        {
+            Temp=[];
+            TempProducts.map((Element , Ind)=>
+            {
+                return(
+                    Element.title.toLowerCase().includes(Val.toLowerCase())?
+                    Temp.push(Element):""
+                )
+            })
+            setProducts(Temp);
+        }
+
+    }
     return (
-            <ProductsArray.Provider value={{Products}}>
+            <ProductsArray.Provider value={{Products , GetSearchText}}>
                 {children}
             </ProductsArray.Provider>
     );
