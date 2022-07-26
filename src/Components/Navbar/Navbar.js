@@ -8,7 +8,7 @@ import { ref, onValue } from 'firebase/database'
 import { signOut } from 'firebase/auth'
 import {UseGlobalContext} from '../Context/Context'
 
-let Navbar = () => {
+let Navbar = (Props) => {
     let { Basket, SignOutCart, SignInCart } = useGlobalCheckoutContext();
     let [Init, setInit] = useState("Hello");
     let [Sin, setSin] = useState("Sign In");
@@ -54,10 +54,10 @@ let Navbar = () => {
                 <div className="Logo"><img src="/Logo/Amazon.png" alt="" /></div>
             </Link>
 
-            <div className="Input-Search">
+            {Props.Hide!==true?<div className="Input-Search">
                 <input type="search" value={Typo} onChange={(E)=>{Gather(E.target.value);}}/>
                 <FaSearch className="Search-Icon Icon" />
-            </div>
+            </div>:""}
 
             <div className="Links">
                 <div className="A">

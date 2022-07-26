@@ -21,7 +21,7 @@ const Checkout = () => {
   }
   return (
     <div className='See'>
-      <Navbar />
+      <Navbar Hide={true}/>
       {
         Basket.length !== 0 ?
           Basket.map((Elem, Ind) => {
