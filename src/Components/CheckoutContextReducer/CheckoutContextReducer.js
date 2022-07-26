@@ -18,6 +18,10 @@ let Reducer=(state , action)=>
             return{
                 Basket:[]
             }
+        case "FILL-CART":
+            return{
+                Basket:action.SBasket
+            }
         default:
             return state;
     }

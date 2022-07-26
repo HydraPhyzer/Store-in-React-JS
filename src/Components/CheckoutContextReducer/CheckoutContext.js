@@ -1,45 +1,58 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import Reducer from './CheckoutContextReducer'
+import { ref, set } from 'firebase/database'
+import { db, auth } from '../Firebase'
 
 let MyCheckoutContext = createContext();
 const CheckoutContext = ({ children }) => {
-    let initialState=
+    let initialState =
     {
-        Basket:[],
+        Basket: [],
     }
     let [MyCheckoutItems, dispatch] = useReducer(Reducer, initialState);
 
-    let AddtoCart=(Obj)=>
-    {
+    let AddtoCart = (Obj) => {
         dispatch({
-            type:"ADD-TO-CART",
+            type: "ADD-TO-CART",
             Obj
         });
     };
-    let RemoveFromCart=(Id)=>
-    {
+
+    useEffect(() => {
+        if (auth.currentUser) {
+            set(ref(db, `${auth.currentUser.uid}`), {
+                Basket: MyCheckoutItems.Basket,
+            })
+        }
+    },[MyCheckoutItems.Basket])
+
+    let RemoveFromCart = (Id) => {
         dispatch({
-            type:"REMOVE-FROM-CART",
+            type: "REMOVE-FROM-CART",
             Id
         });
     };
-    let SignOutCart=()=>
-    {
+    let SignOutCart = () => {
         dispatch({
-            type:"EMPTY-CART",
+            type: "EMPTY-CART",
+        })
+    }
+    let SignInCart = (Arr) => {
+        dispatch({
+            type: "FILL-CART",
+            SBasket: Arr.Basket
         })
     }
 
     return (
-        <MyCheckoutContext.Provider value={{...MyCheckoutItems , AddtoCart , RemoveFromCart , SignOutCart}}>
+        <MyCheckoutContext.Provider value={{ ...MyCheckoutItems, AddtoCart, RemoveFromCart, SignOutCart, SignInCart }}>
             {children}
         </MyCheckoutContext.Provider>
     )
 }
 
-let useGlobalCheckoutContext=()=>
-{
+let useGlobalCheckoutContext = () => {
     return useContext(MyCheckoutContext);
 };
 
-export {useGlobalCheckoutContext , CheckoutContext , MyCheckoutContext};
+export { useGlobalCheckoutContext, CheckoutContext, MyCheckoutContext };

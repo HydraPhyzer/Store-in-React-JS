@@ -3,16 +3,23 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { FaShoppingBasket, FaSearch } from 'react-icons/fa'
 import { useGlobalCheckoutContext } from "../CheckoutContextReducer/CheckoutContext";
-import { auth } from '../Firebase'
+import { auth, db } from '../Firebase'
+import { ref, onValue } from 'firebase/database'
 import { signOut } from 'firebase/auth'
 let Navbar = () => {
-    let { Basket,SignOutCart } = useGlobalCheckoutContext();
+    let { Basket, SignOutCart, SignInCart } = useGlobalCheckoutContext();
     let [Init, setInit] = useState("Hello");
     let [Sin, setSin] = useState("Sign In");
 
     useEffect(() => {
         auth.onAuthStateChanged((User) => {
             if (User != null) {
+                onValue(ref(db, `${auth.currentUser.uid}`), (snapshot) => {
+                    if (snapshot.exists()) {
+                        let Data = snapshot.val();
+                        SignInCart(Data)
+                    }
+                });
                 let Ema = User.email.slice(0, 3);
                 setInit(`${Ema}..`);
                 setSin("");

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../Firebase'
+import { auth} from '../Firebase'
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
 
@@ -11,8 +11,10 @@ const Login = () => {
   let [LoPass, setLoPass] = useState('')
   let [Warns, setWarns] = useState(0);
 
+
   let Navigator = useNavigate();
-  let HandleSignIn = (Event) => {
+
+  let HandleSignIn = () => {
     signInWithEmailAndPassword(auth, LoEmail, LoPass)
       .then(() => {
         Navigator('/')
@@ -21,6 +23,7 @@ const Login = () => {
         setWarns(1);
       })
   }
+
   return (
     <div className='Login'>
       <div className="Form">
@@ -29,11 +32,11 @@ const Login = () => {
           <input id='Email' type="email" value={LoEmail} onChange={(E) => { setLoEmail(E.target.value); setWarns(0) }} />
           <label htmlFor="Pass">Enter Your Password</label>
           <input id='Pass' type="password" value={LoPass} onChange={(E) => { setLoPass(E.target.value); setWarns(0) }} />
-          {Warns === 1 ? <span className='text-danger'>May Be Password Short or Email Wrong</span>:<span></span>}
+          {Warns === 1 ? <span className='text-danger'>May Be Password Short or Email Wrong</span> : <span></span>}
 
           <button className='Btn LoginBtn'>Login</button>
 
-          <p>Don't Have An Account , Then <Link to="/signup" style={{color:"orange"}}>Signup</Link></p>
+          <p>Don't Have An Account , Then <Link to="/signup" style={{ color: "orange" }}>Signup</Link></p>
 
         </form>
 

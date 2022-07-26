@@ -2,7 +2,6 @@ import React from 'react'
 import './ProductsDisplay.css'
 import { UseGlobalContext } from '../Context/Context'
 import { useGlobalCheckoutContext } from '../CheckoutContextReducer/CheckoutContext'
-
 const ProductsDisplay = () => {
 
     let { Products } = UseGlobalContext();
@@ -18,7 +17,6 @@ const ProductsDisplay = () => {
         }
         return `Rating  :${String} (${Count})`
     }
-
     return (
         <div className="ProductsDiplay row w-100">
             {
