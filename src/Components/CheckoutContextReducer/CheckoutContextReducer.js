@@ -14,6 +14,10 @@ let Reducer=(state , action)=>
             return{
                 Basket:[...New],
             }
+        case "EMPTY-CART":
+            return{
+                Basket:[]
+            }
         default:
             return state;
     }

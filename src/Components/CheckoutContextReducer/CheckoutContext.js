@@ -23,9 +23,15 @@ const CheckoutContext = ({ children }) => {
             Id
         });
     };
+    let SignOutCart=()=>
+    {
+        dispatch({
+            type:"EMPTY-CART",
+        })
+    }
 
     return (
-        <MyCheckoutContext.Provider value={{...MyCheckoutItems , AddtoCart , RemoveFromCart}}>
+        <MyCheckoutContext.Provider value={{...MyCheckoutItems , AddtoCart , RemoveFromCart , SignOutCart}}>
             {children}
         </MyCheckoutContext.Provider>
     )

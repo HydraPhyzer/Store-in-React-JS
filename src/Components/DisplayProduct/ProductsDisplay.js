@@ -18,6 +18,7 @@ const ProductsDisplay = () => {
         }
         return `Rating  :${String} (${Count})`
     }
+
     return (
         <div className="ProductsDiplay row w-100">
             {
